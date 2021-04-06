@@ -1,0 +1,7 @@
+app: webapp
+port: 1111
+replica: 2
+grafana: grafana
+grafport: 3000
+grafreplica: 1
+

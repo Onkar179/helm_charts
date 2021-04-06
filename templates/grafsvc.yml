@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{ .Values.grafana }}
+    app.kubernetes.io/managed-by: Helm
+  name: {{ .Values.grafana }}
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: {{ .Values.grafport }}
+  selector:
+    app: {{ .Values.grafana }}
+  type: NodePort
+status:
+  loadBalancer: {}

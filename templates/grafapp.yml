@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.grafana }}
+  name: {{ .Values.grafana }}
+spec:
+  replicas: {{ .Values.grafreplica }}
+  selector:
+    matchLabels:
+      app: {{ .Values.grafana }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.grafana }}
+    spec:
+      containers:
+      - image: onkar17/grafana
+        name: grafana
+
